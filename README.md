@@ -86,7 +86,7 @@ The site deploys to [Vercel](https://vercel.com). `vercel.json` sets the build:
 
 Set `DEMO_DATA_TOKEN` in the Vercel project's environment variables. Use a fine-grained GitHub token with access to `PlaceOS/demo-data` only, and the **Contents: Read-only** permission.
 
-To show data changes on the live site, Vercel must build the site again. The data repo has a GitHub Action that starts a new build through a Vercel deploy hook each time `main` changes.
+To show data changes on the live site, Vercel must build the site again. The data repo has a GitHub Action that starts a new build through a Vercel deploy hook once per day, if its `main` branch changed since the last build. You can also run the Action by hand.
 
 Use the `vercel.json` file. Do not use the SvelteKit framework preset. If you set adapter options, `adapter-static` does not use its Vercel zero-config mode, and that mode does not add an SPA fallback route.
 
