@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/sora';
+
+@theme {
+	--font-sans: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
+
+	/* PlaceOS brand colors, from the original demo.place.tech theme. */
+	--color-brand: #c92366;
+	--color-ink: #0a0d2e;
+	--color-sky: #eef6fb;
+	--color-slate: #5b6178;
+	--color-line: #d6e2ec;
+}
+
+@layer base {
+	body {
+		@apply bg-sky font-sans text-ink antialiased;
+	}
+
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-brand;
+	}
+}
